@@ -25,12 +25,12 @@ def check_continue(who):
             continue
 
 def run():
-    queue = input('Who is gonna start the game, PC or Player \n>>> ').lower()
     results = {
         "pc" : 0,
         "player" : 0
         }
     while True:
+        queue = input('Who is gonna start the game, PC or Player \n>>> ').lower()
         if queue == 'player':
             results["player"] = iPlay()
             results["pc"] = check_continue('pc')
@@ -41,13 +41,17 @@ def run():
             break
         else:
             print('Please, check the choice that you entered...\n\n')
+            continue
     
     diff = results["pc"] - results["player"]
     print(results)
+    for key, value in results.items():
+        print(f"{key} : {value}")
+        
     if diff > 0:
-        print(f"Player won with differance {diff*(-1)}")
+        print(f"Player won with differance {abs(diff)}")
     elif diff < 0:
-        print(f"PC won with differance {diff}")
+        print(f"PC won with differance {abs(diff)}")
     else:
         print('Happy Draw, Friends win together!!!')
         

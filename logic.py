@@ -19,8 +19,6 @@ def display(user_input, word):
         else:
             display_letter += '-'
     return display_letter
-
-
     
 
 
