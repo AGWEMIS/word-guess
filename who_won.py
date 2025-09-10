@@ -44,7 +44,7 @@ def run():
             continue
     
     diff = results["pc"] - results["player"]
-    print(results)
+    
     for key, value in results.items():
         print(f"{key} : {value}")
         
